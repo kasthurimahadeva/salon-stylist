@@ -34,6 +34,12 @@ public class StylistServiceImpl implements StylistService {
         stylistRepositary.delete(stylistModel);
     }
 
+    @Override
+    public Optional<Iterable<StylistModel>> findBySkill(String skill) {
+        return this.stylistRepositary.findBySkill(skill);
+    }
+
+
     @Autowired
     public void setStylistRepositary(StylistRepositary stylistRepositary) {
         this.stylistRepositary = stylistRepositary;

@@ -52,9 +52,13 @@ public class StylistController {
         }
     }
 
-    @GetMapping("/search")
-    public String search() {
-        return "search is working";
+    @GetMapping("/search/{skill}")
+    public Iterable<StylistModel> search(@PathVariable String skill) {
+        Optional<Iterable<StylistModel>> stylists = this.stylistService.findBySkill(skill);
+        if(stylists.isPresent()) {
+            return stylists.get();
+        }
+        return null;
     }
 
     @Autowired
