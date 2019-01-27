@@ -1,9 +1,9 @@
 # Spring properties
 spring:
   application:
-    name: accounts-service
+    name: booking-service
   datasource:
-    url: jdbc:h2:file:~/db/account
+    url: jdbc:h2:file:~/db/booking
     username: sa
     password:
     driverClassName: org.h2.Driver
@@ -25,4 +25,4 @@ eureka:
 
 # HTTP Server
 server:
-  port: 2222   # HTTP (Tomcat) port
+  port: 3333   # HTTP (Tomcat) port
