@@ -1,0 +1,21 @@
+server:
+  port: 4444
+
+spring:
+  application:
+    name: zuul-server
+
+# Discovery Server Access
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka/
+
+
+zuul:
+  ignored-services: "*"
+  routes:
+    account-service:
+      path: "/account/**"
+    booking-service:
+      path: "/booking/**"
