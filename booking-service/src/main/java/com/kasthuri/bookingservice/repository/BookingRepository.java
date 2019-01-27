@@ -7,4 +7,8 @@ import java.util.Optional;
 
 public interface BookingRepository extends JpaRepository<BookingModel, String> {
     Optional<Iterable<BookingModel>> findByStatus(String status);
+
+    Optional<Iterable<BookingModel>> findByStylistIdAndStatus(String stylistId, String status);
+
+    Optional<Iterable<BookingModel>> findBySalonIdAndStatus(String salonId, String status);
 }

@@ -13,4 +13,8 @@ public interface BookingService {
     Optional<Iterable<BookingModel>> findByStatus(String status);
 
     Optional<BookingModel> findById(String id);
+
+    Optional<Iterable<BookingModel>> findByStylistIdAndStatus(String id, String status);
+
+    Optional<Iterable<BookingModel>> findBySalonIdAndStatus(String id, String status);
 }

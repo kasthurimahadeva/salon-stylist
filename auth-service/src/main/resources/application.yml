@@ -12,3 +12,7 @@ eureka:
 
   instance:
     leaseRenewalIntervalInSeconds: 5
+
+logging:
+  level:
+    com.kasthuri.authservice: debug
