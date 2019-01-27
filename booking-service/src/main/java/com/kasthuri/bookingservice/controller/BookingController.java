@@ -6,6 +6,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -33,6 +34,15 @@ public class BookingController {
             return bookingList.get();
         }
         return null;
+    }
+
+    @GetMapping("/stylist/{stylistId}")
+    public List<BookingModel> findByStylistId(@PathVariable String stylistId) {
+        Optional<Iterable<BookingModel>> bookings = bookingService.findByStylistId(stylistId);
+        if (!bookings.isPresent()) return null;
+        List<BookingModel> result = new ArrayList<>();
+        bookings.get().forEach(result::add);
+        return result;
     }
 
     @GetMapping("/stylist/{stylistId}/{status}")

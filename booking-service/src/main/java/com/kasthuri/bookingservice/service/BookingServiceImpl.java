@@ -43,6 +43,11 @@ public class BookingServiceImpl implements BookingService {
         return this.bookingRepository.findBySalonIdAndStatus(id, status);
     }
 
+    @Override
+    public Optional<Iterable<BookingModel>> findByStylistId(String id) {
+        return this.bookingRepository.findByStylistId(id);
+    }
+
     @Autowired
     public void setBookingRepository(BookingRepository bookingRepository) {
         this.bookingRepository = bookingRepository;
