@@ -52,6 +52,11 @@ public class StylistController {
         }
     }
 
+    @GetMapping("/search")
+    public String search() {
+        return "search is working";
+    }
+
     @Autowired
     public void setSalonService(StylistService stylistService) {
         this.stylistService = stylistService;
