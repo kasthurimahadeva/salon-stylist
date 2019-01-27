@@ -19,7 +19,7 @@ public class StylistController {
         return stylistService.findAll();
     }
 
-    @PostMapping("/")
+    @PostMapping("/create")
     public StylistModel save(@RequestBody StylistModel stylistModel) {
         return stylistService.save(stylistModel);
     }

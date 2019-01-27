@@ -21,7 +21,7 @@ public class SalonController {
         return salonService.findAll();
     }
 
-    @PostMapping("/")
+    @PostMapping("/create")
     public SalonModel create(@RequestBody SalonModel salonModel) {
         return salonService.save(salonModel);
     }
