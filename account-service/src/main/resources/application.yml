@@ -1,7 +1,7 @@
 # Spring properties
 spring:
   application:
-    name: accounts-service
+    name: account-service
   datasource:
     url: jdbc:h2:file:~/db/account
     username: sa
