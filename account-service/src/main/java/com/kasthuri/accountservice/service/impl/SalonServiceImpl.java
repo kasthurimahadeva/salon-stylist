@@ -35,6 +35,11 @@ public class SalonServiceImpl implements SalonService {
         salonRepositary.delete(salonModel);
     }
 
+    @Override
+    public Optional<Iterable<SalonModel>> findByEmail(String email) {
+        return this.salonRepositary.findByEmail(email);
+    }
+
     @Autowired
     public void setSalonRepositary(SalonRepositary salonRepositary) {
         this.salonRepositary = salonRepositary;

@@ -14,4 +14,6 @@ public interface StylistService {
 
     void delete(StylistModel stylistModel);
     Optional<Iterable<StylistModel>> findBySkill(String skill);
+
+    Optional<Iterable<StylistModel>> findByEmail(String email);
 }

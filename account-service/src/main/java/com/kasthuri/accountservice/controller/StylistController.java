@@ -24,6 +24,12 @@ public class StylistController {
         return stylistService.save(stylistModel);
     }
 
+    @GetMapping("/find/{email}")
+    public StylistModel getStylistByEmail(@PathVariable String email) {
+        Optional<Iterable<StylistModel>> result = stylistService.findByEmail(email);
+        return result.map(salonModels -> salonModels.iterator().next()).orElse(null);
+    }
+
     @GetMapping("/{stylistId}")
     public StylistModel get(@PathVariable String stylistId) {
         Optional<StylistModel> stylist = stylistService.findById(stylistId);
@@ -55,7 +61,7 @@ public class StylistController {
     @GetMapping("/search/{skill}")
     public Iterable<StylistModel> search(@PathVariable String skill) {
         Optional<Iterable<StylistModel>> stylists = this.stylistService.findBySkill(skill);
-        if(stylists.isPresent()) {
+        if (stylists.isPresent()) {
             return stylists.get();
         }
         return null;
