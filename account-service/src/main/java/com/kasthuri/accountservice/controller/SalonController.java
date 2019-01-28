@@ -26,6 +26,12 @@ public class SalonController {
         return salonService.save(salonModel);
     }
 
+    @GetMapping("/find/{email}")
+    public SalonModel getSalonByEmail(@PathVariable String email) {
+        Optional<Iterable<SalonModel>> result = salonService.findByEmail(email);
+        return result.map(salonModels -> salonModels.iterator().next()).orElse(null);
+    }
+
     @GetMapping("/{salonId}")
     public SalonModel get(@PathVariable String salonId) {
         Optional<SalonModel> salonModel = salonService.findById(salonId);

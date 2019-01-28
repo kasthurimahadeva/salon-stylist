@@ -39,6 +39,11 @@ public class StylistServiceImpl implements StylistService {
         return this.stylistRepositary.findBySkill(skill);
     }
 
+    @Override
+    public Optional<Iterable<StylistModel>> findByEmail(String email) {
+        return this.stylistRepositary.findByEmail(email);
+    }
+
 
     @Autowired
     public void setStylistRepositary(StylistRepositary stylistRepositary) {

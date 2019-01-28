@@ -20,7 +20,7 @@ public class UserController {
         AppUser appUser = new AppUser();
         appUser.setUsername(userDto.getUsername());
         appUser.setPassword(encoder.encode(userDto.getPassword()));
-        appUser.setRole(userDto.getRole());
+        appUser.setRole(userDto.getRole().toLowerCase());
         return userRepository.save(appUser);
     }
 
